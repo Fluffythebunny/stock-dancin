@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Looping Video</title>
+    <style>
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            outline: none;
+        }
+        .responsive-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: none;
+            outline: none;
+        }
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px 60px;
+            font-size: 24px;
+            background: #fff;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .play-button:hover {
+            background: #f0f0f0;
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+        .fade-out {
+            animation: fadeOut 0.5s forwards;
+        }
+        @keyframes fadeOut {
+            from { opacity: 1; }
+            to { opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="video-container">
+        <video class="responsive-video" loop>
+            <source src="stock.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <button class="play-button">Click Me</button>
+    </div>
+
+    <script>
+        const video = document.querySelector('.responsive-video');
+        const playButton = document.querySelector('.play-button');
+        const videoContainer = document.querySelector('.video-container');
+
+        playButton.addEventListener('click', () => {
+            video.style.display = 'block';
+            video.muted = false;
+            video.play();
+            playButton.classList.add('fade-out');
+            setTimeout(() => {
+                playButton.style.display = 'none';
+            }, 500);
+        });
+    </script>
+</body>
+</html>
