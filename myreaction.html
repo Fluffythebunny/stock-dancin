@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notice of Non-Engagement</title>
+    <style>
+        /* Subtle animation keyframes */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInLeft {
+            from { opacity: 0; transform: translateX(-10px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes fadeInRight {
+            from { opacity: 0; transform: translateX(10px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes subtle-pulse {
+            0% { box-shadow: 0 0 0 0 rgba(0, 84, 166, 0.2); }
+            70% { box-shadow: 0 0 0 6px rgba(0, 84, 166, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 84, 166, 0); }
+        }
+
+        /* Base styles */
+        :root {
+            --primary: #0A192F;
+            --secondary: #0D2240;
+            --accent: #0054A6;
+            --accent-hover: #003D7A;
+            --text: #E6E6E6;
+            --text-secondary: #A0AEC0;
+            --border: rgba(255, 255, 255, 0.08);
+            --card-bg: rgba(10, 25, 47, 0.95);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0A192F, #172A46);
+            color: var(--text);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            background-attachment: fixed;
+        }
+
+        .container {
+            max-width: 700px;
+            width: 100%;
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 4px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            animation: fadeIn 0.6s forwards ease-out;
+        }
+
+        header {
+            padding: 28px 32px;
+            background: var(--secondary);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            opacity: 0;
+            animation: fadeInLeft 0.6s forwards ease-out;
+            animation-delay: 0.2s;
+        }
+
+        .logo {
+            height: 32px;
+            width: 32px;
+            background: var(--accent);
+            border-radius: 4px;
+            margin-right: 16px;
+        }
+
+        header h1 {
+            font-size: 18px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .content {
+            padding: 32px;
+        }
+
+        h2 {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            color: var(--accent);
+            opacity: 0;
+            animation: fadeInRight 0.6s forwards ease-out;
+            animation-delay: 0.4s;
+        }
+
+        p {
+            margin-bottom: 24px;
+            line-height: 1.6;
+            font-size: 15px;
+            color: var(--text);
+            opacity: 0;
+            animation: fadeIn 0.6s forwards ease-out;
+        }
+
+        p:nth-of-type(1) {
+            animation-delay: 0.6s;
+        }
+
+        p:nth-of-type(2) {
+            animation-delay: 0.8s;
+        }
+
+        p:nth-of-type(3) {
+            animation-delay: 1s;
+        }
+
+        .notice-box {
+            background: rgba(0, 84, 166, 0.08);
+            border-left: 3px solid var(--accent);
+            padding: 24px;
+            margin: 24px 0;
+            border-radius: 2px;
+            opacity: 0;
+            animation: fadeIn 0.6s forwards ease-out;
+            animation-delay: 0.7s;
+        }
+
+        .button {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 12px 32px;
+            border-radius: 3px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 15px;
+            opacity: 0;
+            animation: fadeIn 0.6s forwards ease-out, subtle-pulse 2s infinite;
+            animation-delay: 1.2s;
+        }
+
+        .button:hover {
+            background: var(--accent-hover);
+        }
+
+        footer {
+            padding: 20px 32px;
+            color: var(--text-secondary);
+            font-size: 13px;
+            border-top: 1px solid var(--border);
+            opacity: 0;
+            animation: fadeIn 0.6s forwards ease-out;
+            animation-delay: 1.4s;
+        }
+        
+        .timestamp {
+            color: var(--text-secondary);
+            font-size: 13px;
+            margin-top: 32px;
+            opacity: 0;
+            animation: fadeIn 0.6s forwards ease-out;
+            animation-delay: 1.1s;
+        }
+
+        .legal-footer {
+            margin-top: 16px;
+            font-size: 12px;
+            opacity: 0.7;
+        }
+
+        /* Ensure accessibility compliance */
+        @media (prefers-reduced-motion) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo"></div>
+            <h1>Formal Notification</h1>
+        </header>
+        <div class="content">
+            <h2>Notice of Non-Engagement</h2>
+            
+            <p>This communication serves as an official notification regarding the status of any prospective interaction or professional relationship.</p>
+            
+            <div class="notice-box">
+                <p style="margin-bottom: 0; animation: none; opacity: 1;"><strong>FORMAL STATEMENT:</strong> As this constitutes our first interaction, I must inform you that I do not know you and have no interest in establishing any form of contact or relationship. I require that all communication attempts cease immediately and permanently.</p>
+            </div>
+            
+            <p>This decision is final, non-negotiable, and effective immediately. Any further contact attempts will be considered unwelcome and inappropriate.</p>
+            
+            <p>This notice has been documented, timestamped, and may be referenced in the event of non-compliance.</p>
+            
+            <button class="button" onclick="
+                this.innerHTML = 'Notification Acknowledged';
+                this.style.backgroundColor = '#003D7A';
+                setTimeout(() => {
+                    document.querySelector('.container').style.opacity = '0';
+                    document.querySelector('.container').style.transform = 'translateY(10px)';
+                    document.querySelector('.container').style.transition = 'opacity 0.6s, transform 0.6s';
+                    setTimeout(() => {
+                        window.close();
+                    }, 600);
+                }, 800);
+            ">Acknowledge Receipt</button>
+            
+            <div class="timestamp">
+                Date of issuance: <script>document.write(new Date().toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'}))</script>
+            </div>
+        </div>
+        <footer>
+            This is an official communication regarding interpersonal boundaries.
+            <div class="legal-footer">All rights reserved. This notice is binding upon receipt.</div>
+        </footer>
+    </div>
+</body>
+</html>
